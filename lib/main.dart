@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/page1.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,10 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fixable',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Fixable Home Page')
     );
   }
 }
@@ -62,14 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     }
   void _changeColor1() {
-    setState(() {
-      if (_buttonText1 == "Get repair") {
-        _buttonText1 = "random";
-      }
-      else {
-        _buttonText1 = "Get repair";
-      }
-    });
+    Navigator.push(context,MaterialPageRoute(builder: (context) => Page1()));
   }
 
   void _changeColor2() {
@@ -108,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Account"),
               decoration: BoxDecoration(color: Colors.blue)
             ),
-              ListTile(title: Text("Text")),
+              ListTile(title: Text("Your trades")),
             ]
           )),
 
