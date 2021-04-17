@@ -10,9 +10,13 @@ class Page1 extends StatefulWidget {
 
 class _Page1State extends State<Page1> {
   String result = "";
-  static List<String> list = ["one", "two", "three"];
+  static List<String> list = ["Bric-o-brac", "Car", "Clothes", "Furniture", "Kitchen Appliances", "Laptops", "Phones", "Plumbing", "Shoes"];
   List<String> newlist = List.from(list);
-  
+
+  void _randomClick() {
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,20 +40,39 @@ class _Page1State extends State<Page1> {
                   ),
                 ),
                 Text(result),
-                Expanded(
-                  child: ListView.builder(itemCount: newlist.length, itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 50,
-                      margin: EdgeInsets.all(2),
-                      child: Center(
-                        child: Text('${newlist[index]}'),
-                      )
-                    );
-                  }
+                Text("Categories"),
+                //BoxDecoration(border: Border.all(color: Colors.black, width: 2.0)),
+                Container(
+                  //padding: const EdgeInsets.all(4.0),
+                  //alignment: Alignment.center,
+                  child: Expanded(
+                    child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 4.0,
+                      mainAxisSpacing: 4.0,
+
+                    ),
+                    itemCount: newlist.length, itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        height: 50,
+                        margin: EdgeInsets.all(2),
+                        color: Colors.lightBlueAccent,
+                        child: OutlinedButton(
+                          onPressed: _randomClick,
+                          //Center(
+                          child: Text('${newlist[index]}'),
+                          )
+                        );
+                      //);
+                    }
                 //EditableText(controller: TextEditingController.fromValue(value), focusNode: focusNode, style: style, cursorColor: cursorColor, backgroundCursorColor: backgroundCursorColor)
     //
-                  ))]
-                  ))
+                    )),
+
+                )]
+          )
+      )
+
           );
   }
 }

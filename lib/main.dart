@@ -50,21 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String _buttonText2 = "Provide repair";
   String _buttonText3 = "I want to donate an item";
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-    }
-  void _changeColor1() {
+  void _changeFunction1() {
     Navigator.push(context,MaterialPageRoute(builder: (context) => Page1()));
   }
 
-  void _changeColor2() {
+  void _changeFunction2() {
     setState(() {
       if (_buttonText2 == "Provide repair") {
         _buttonText2 = "random";
@@ -75,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _changeColor3() {
+  void _changeFunction3() {
     setState(() {
       if (_buttonText3 == "I want to donate an item") {
         _buttonText3 = "random";
@@ -113,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
+          // It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
           // children horizontally, and tries to be as tall as its parent.
           //
@@ -127,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               width: 100,
@@ -138,26 +128,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       image: AssetImage('assets/fixable_logo.png'),
                       fit: BoxFit.fill)),),
             Text("Hello, Lucy", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
-            Text(""),
-            Text("It's good to have you in our community. What do you need?"),
+            //Text(""),
+            Text("It's good to have you in our community.\nWhat do you need?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 100,
+                  width: 150,
                   height: 50,
                   child: OutlinedButton(
-                    onPressed: _changeColor1,
-                    child: Text(_buttonText1),
+                    onPressed: _changeFunction1,
+                    child: Text(_buttonText1, textAlign: TextAlign.center,),
                     ),
 
                   ),
+                Container(width: 25,),
                 Container(
-                  width: 100,
+                  width: 150,
                   height: 50,
                   child: OutlinedButton(
-                    onPressed: _changeColor2,
-                    child: Text(_buttonText2),
+                    onPressed: _changeFunction2,
+                    child: Text(_buttonText2, textAlign: TextAlign.center),
                 )
 
                 )
@@ -165,11 +156,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Container(
-              width: 200,
-              height: 30,
+              width: 325,
+              height: 50,
               child: OutlinedButton(
-                onPressed: _changeColor3,
-                child: Text(_buttonText3),
+                onPressed: _changeFunction3,
+                child: Text(_buttonText3, textAlign: TextAlign.center),
               )
             )
 
@@ -178,12 +169,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
 
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
