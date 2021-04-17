@@ -47,6 +47,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _buttonText1 = "Get repair";
+  String _buttonText2 = "Provide repair";
+  String _buttonText3 = "I want to donate an item";
 
   void _incrementCounter() {
     setState(() {
@@ -56,6 +59,37 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+    }
+  void _changeColor1() {
+    setState(() {
+      if (_buttonText1 == "Get repair") {
+        _buttonText1 = "random";
+      }
+      else {
+        _buttonText1 = "Get repair";
+      }
+    });
+  }
+
+  void _changeColor2() {
+    setState(() {
+      if (_buttonText2 == "Provide repair") {
+        _buttonText2 = "random";
+      }
+      else {
+        _buttonText2 = "Provide repair";
+      }
+    });
+  }
+
+  void _changeColor3() {
+    setState(() {
+      if (_buttonText3 == "I want to donate an item") {
+        _buttonText3 = "random";
+      }
+
+      else {_buttonText3 = "I want to donate an item";}
     });
   }
 
@@ -68,6 +102,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      drawer: Drawer(
+          child: ListView(
+            children: <Widget>[DrawerHeader(
+              child: Text("Account"),
+              decoration: BoxDecoration(color: Colors.blue)
+            ),
+              ListTile(title: Text("Text")),
+            ]
+          )),
+
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -93,17 +137,56 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-              style: TextStyle (color: Colors.blue)
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: AssetImage('assets/fixable_logo.png'),
+                      fit: BoxFit.fill)),),
+            Text("Hello, Lucy", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+            Text(""),
+            Text("It's good to have you in our community. What do you need?"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 100,
+                  height: 50,
+                  child: OutlinedButton(
+                    onPressed: _changeColor1,
+                    child: Text(_buttonText1),
+                    ),
+
+                  ),
+                Container(
+                  width: 100,
+                  height: 50,
+                  child: OutlinedButton(
+                    onPressed: _changeColor2,
+                    child: Text(_buttonText2),
+                )
+
+                )
+              ]
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+
+            Container(
+              width: 200,
+              height: 30,
+              child: OutlinedButton(
+                onPressed: _changeColor3,
+                child: Text(_buttonText3),
+              )
+            )
+
+            //Image.asset('assets/fixable_logo.png', width: 100.0, height: 100.0, fit: ,)
           ],
         ),
       ),
+
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
