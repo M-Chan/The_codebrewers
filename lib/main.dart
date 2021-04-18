@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/page1.dart';
 
@@ -101,25 +102,11 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          // It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
 
             ColoredBox(
@@ -129,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //decoration: BoxDecoration(color: Color(0xfffdca40))
             ),
             Container(
+              margin: EdgeInsets.only(top: 112),
               width: 143,
               height: 143,
               decoration: BoxDecoration(
@@ -136,15 +124,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   image: DecorationImage(
                       image: AssetImage('assets/lucy_pic.png'),
                       fit: BoxFit.fill)),),
-            Text("Hello, Lucy", style: TextStyle(
+            Container(
+              margin: EdgeInsets.only(top: 8),
+              child: Text("Hello, Lucy", style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.w700,
                 fontStyle: FontStyle.normal,
                 fontSize: 24)),
             //Text(""),
             //RichText("It's good to have you in our community.\nWhat do you need?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            ),
             Container(
-              margin: EdgeInsets.all(30),
+              margin: EdgeInsets.only(left: 30, top:59, right: 30, bottom: 30),
               child: RichText(
                 text: TextSpan(
                     children: [
@@ -171,6 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
+                  margin: EdgeInsets.only(right: 13, bottom: 13),
                   width: 165,
                   height: 51,
                   decoration: BoxDecoration(
@@ -187,8 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
                     ),
                   ),
-                Container(width: 25,),
+                //Container(width: 25,),
                 Container(
+                  margin: EdgeInsets.only(bottom: 13),
                   width: 165,
                   height: 51,
                   decoration: BoxDecoration(
@@ -210,6 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Container(
+              margin: EdgeInsets.only(bottom: 90),
               width: 343,
               height: 51,
               decoration: BoxDecoration(
