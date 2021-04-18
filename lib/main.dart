@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fixable',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xfffdca40),
+        fontFamily: "Lato",
       ),
       home: MyHomePage(title: 'Fixable Home Page')
     );
@@ -88,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
             children: <Widget>[DrawerHeader(
               child: Text("Account"),
-              decoration: BoxDecoration(color: Colors.blue)
+              decoration: BoxDecoration(color: Color(0xfffdca40))
             ),
               ListTile(title: Text("Your trades")),
             ]
@@ -119,36 +121,88 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+
+            ColoredBox(
+              color: Color(0xfffdca40),
+              //width: 414,
+              //height: 186,
+              //decoration: BoxDecoration(color: Color(0xfffdca40))
+            ),
             Container(
-              width: 100,
-              height: 100,
+              width: 143,
+              height: 143,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      image: AssetImage('assets/fixable_logo.png'),
+                      image: AssetImage('assets/lucy_pic.png'),
                       fit: BoxFit.fill)),),
-            Text("Hello, Lucy", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+            Text("Hello, Lucy", style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+                fontStyle: FontStyle.normal,
+                fontSize: 24)),
             //Text(""),
-            Text("It's good to have you in our community.\nWhat do you need?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            //RichText("It's good to have you in our community.\nWhat do you need?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            Container(
+              margin: EdgeInsets.all(30),
+              child: RichText(
+                text: TextSpan(
+                    children: [
+                      TextSpan(
+                          style: const TextStyle(
+                              color:  Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontStyle:  FontStyle.normal,
+                              fontSize: 22.0
+                          ),
+                          text: "It’s good to have your in our community. "),
+                      TextSpan(
+                          style: const TextStyle(
+                              color:  Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontStyle:  FontStyle.normal,
+                              fontSize: 22.0
+                          ),
+                          text: "What do you need?")
+                    ]
+                )
+            )),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 150,
-                  height: 50,
-                  child: OutlinedButton(
+                  width: 165,
+                  height: 51,
+                  decoration: BoxDecoration(
+                    color: Color(0xfffdca40),
+                    borderRadius: BorderRadius.all(Radius.circular(35)),
+                  ),
+                  child: TextButton(
                     onPressed: _changeFunction1,
-                    child: Text(_buttonText1, textAlign: TextAlign.center,),
+                    child: Text(_buttonText1, textAlign: TextAlign.center, style: TextStyle(
+                        color: Color(0xff383735),
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 18
+                    )),
                     ),
-
                   ),
                 Container(width: 25,),
                 Container(
-                  width: 150,
-                  height: 50,
-                  child: OutlinedButton(
+                  width: 165,
+                  height: 51,
+                  decoration: BoxDecoration(
+                    color: Color(0xff2176ff),
+                    borderRadius: BorderRadius.all(Radius.circular(35)),
+                  ),
+                  child: TextButton(
                     onPressed: _changeFunction2,
-                    child: Text(_buttonText2, textAlign: TextAlign.center),
+                    child: Text(_buttonText2, textAlign: TextAlign.center, style: TextStyle(
+                        color: Color(0xffffffff),
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 18
+                    )),
                 )
 
                 )
@@ -156,11 +210,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Container(
-              width: 325,
-              height: 50,
-              child: OutlinedButton(
+              width: 343,
+              height: 51,
+              decoration: BoxDecoration(
+                color: Color(0xff383735),
+                borderRadius: BorderRadius.all(Radius.circular(35)),
+              ),
+              child: TextButton(
                 onPressed: _changeFunction3,
-                child: Text(_buttonText3, textAlign: TextAlign.center),
+                child: Text(_buttonText3, textAlign: TextAlign.center, style: TextStyle(
+                    color: Color(0xffffffff),
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize:18
+                )),
               )
             )
 
