@@ -23,3 +23,6 @@ Built using Flutter and Android Studio
 
 https://user-images.githubusercontent.com/81781462/115150978-bc38a480-a062-11eb-979f-5bfa32aa1b3f.mp4
 
+
+## Credits
+Many thanks to the Code Brewers Cheryl (@CBennett15) for contributing!
