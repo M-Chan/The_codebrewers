@@ -4,13 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-class Page1 extends StatefulWidget {
+class GetRepair extends StatefulWidget {
 
   @override
-  _Page1State createState() => _Page1State();
+  _GetRepairState createState() => _GetRepairState();
 }
 
-class _Page1State extends State<Page1> {
+class _GetRepairState extends State<GetRepair> {
   String result = "";
   static List<String> list = ["Bric-o-brac", "Car", "Clothes", "Furniture", "Kitchen Appliances", "Laptops", "Phones", "Plumbing", "Shoes"];
   List<String> newlist = List.from(list);
@@ -114,9 +114,7 @@ class _Page1State extends State<Page1> {
                           child: Text('${newlist[index]}', style: TextStyle(color: Colors.black),),
                           )
                         );
-                        return Chip(
-                        label: Text('${newlist[index]}')
-                      );
+
                        */
                     //}
                 //EditableText(controller: TextEditingController.fromValue(value), focusNode: focusNode, style: style, cursorColor: cursorColor, backgroundCursorColor: backgroundCursorColor)
@@ -130,19 +128,3 @@ class _Page1State extends State<Page1> {
           );
   }
 }
-
-/*
-class MyHomePage extends StatefulWidget {
-
-  @override
-  _Page1State createState() => _Page1State();
-
-}
-
-
-class _Page1State extends State<Page1> {
-  @override
-  Widget build(BuildContext context) => MaterialApp();
-
-}
-*/
