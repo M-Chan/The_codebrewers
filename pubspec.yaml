@@ -27,6 +27,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  splashscreen:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -48,6 +49,7 @@ flutter:
   assets:
     - assets/fixable_logo.png
     - assets/lucy_pic.png
+    - assets/splash_screen.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

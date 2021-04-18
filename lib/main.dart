@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/page1.dart';
+import 'package:splashscreen/splashscreen.dart';
+
+import 'dart:async';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,16 +12,45 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
+    @override
+    Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fixable',
+      title: 'splashscreen',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xfffdca40),
         fontFamily: "Lato",
       ),
-      home: MyHomePage()
+      home: SplashScreenPage()
+    );
+  }
+}
+
+class SplashScreenPage extends StatefulWidget {
+  @override
+  SplashScreenPageState createState() => SplashScreenPageState();
+}
+class SplashScreenPageState extends State<SplashScreenPage> {
+  void navigateMyHomePage() {
+    Navigator.push(context,MaterialPageRoute(builder: (context) => MyHomePage()));
+  }
+
+  startSplashScreenTimer() async {
+    var _duration = new Duration(seconds: 5);
+    return new Timer(_duration, navigateMyHomePage);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startSplashScreenTimer();
+  }
+
+  @override
+  Widget build(BuildContext context){
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    return Container(
+      child: new Image.asset('assets/splash_screen.png', fit: BoxFit.fill)
     );
   }
 }
