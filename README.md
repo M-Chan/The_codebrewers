@@ -1,16 +1,25 @@
-# test_project
+# Fixable
 
-A new Flutter project.
+Mobile App Project for Athena Hack 2021
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Technology Used
 
-A few resources to get you started if this is your first Flutter project:
+Built using Flutter and Android Studio
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+![HomePage](https://user-images.githubusercontent.com/81781462/115150586-ef7a3400-a060-11eb-8b89-48ffe6c7d62c.png)
+
+![Sidebar](https://user-images.githubusercontent.com/81781462/115150588-f012ca80-a060-11eb-9d21-bc45f505c05e.png)
+
+![GetRepair](https://user-images.githubusercontent.com/81781462/115150515-a88c3e80-a060-11eb-9301-2e07b2fbe44c.png)
+
+![Search](https://user-images.githubusercontent.com/81781462/115150587-f012ca80-a060-11eb-896b-6af2dd1dcb3c.png)
+
+
+## Demo Video
+
+https://user-images.githubusercontent.com/81781462/115150978-bc38a480-a062-11eb-979f-5bfa32aa1b3f.mp4
+
